@@ -1,14 +1,12 @@
-// src/components/ContactForm.tsx
 import { useState } from "react";
-import { useToast } from "./ui/use-toast";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
-import { Checkbox } from "./ui/checkbox";
+import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import CountrySelect from "./CountrySelect";
 
 const ContactForm = () => {
-  const { toast } = useToast(); // Ensure this returns a function
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -26,12 +24,9 @@ const ContactForm = () => {
     try {
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1500));
-
-      toast({
-        title: "Success!",
-        description: "Your message has been sent successfully.",
-      });
-
+      
+      toast.success("Your message has been sent successfully.");
+      
       setFormData({
         fullName: "",
         email: "",
@@ -41,11 +36,7 @@ const ContactForm = () => {
         acceptPolicy: false,
       });
     } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-      });
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
