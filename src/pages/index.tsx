@@ -13,10 +13,10 @@ const Index = () => {
         <p className="text-muted-foreground">
           Or just reach out manually to{" "}
           <a
-            href="mailto:hello@example.com"
+            href="mailto:eyureaper@gmail.com"
             className="text-primary hover:underline"
           >
-            hello@example.com
+            eyureaper@gmail.com
           </a>
         </p>
       </div>
