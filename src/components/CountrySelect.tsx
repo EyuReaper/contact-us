@@ -7,6 +7,7 @@ const countries = [
   { code: "DE", prefix: "+49", flag: "🇩🇪" },
   { code: "IT", prefix: "+39", flag: "🇮🇹" },
   { code: "ES", prefix: "+34", flag: "🇪🇸" },
+  { code: "ET", prefix: "+251", flag: "ET" },
 ];
 
 interface CountrySelectProps {
